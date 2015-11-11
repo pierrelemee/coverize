@@ -1,8 +1,12 @@
 package fr.pierrelemee;
 
+import rx.Observable;
+
 import java.net.URL;
 
 public interface CoverProvider {
 
-    URL getCoverURL(String artist, String album) throws Exception;
+    Observable<URL> getCoverURL(String artist, String album);
+
+    void terminate();
 }
