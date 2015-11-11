@@ -17,6 +17,7 @@ public class Coverize {
     }
 
     public void coverize(String path) {
+        Long start = System.currentTimeMillis();
         File directory = new File(path);
         if (directory.exists()) {
             if (directory.isDirectory()) {
@@ -27,6 +28,7 @@ public class Coverize {
                 }
             }
         }
+        System.out.println(String.format("Process terminated in %d ms through %d thread(s)", System.currentTimeMillis() - start, Thread.activeCount()));
     }
 
     protected void processArtistDirectory(File directory) {
